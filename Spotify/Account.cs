@@ -6,16 +6,24 @@ using System.Threading.Tasks;
 
 namespace Spotify {
     
-    internal class Account {
+    public class Account {
+
+        public int id {
+            get; set; 
+        }
 
         public string name {
             get; set;
         }
 
-        public List<Account> friends;
+        public string password {
+            get; set; 
+        }
+
+        public List<int> ?friendIds;
 
         public Account() {
-            friends = new();
+            friendIds = new();
         }
     }
 }
