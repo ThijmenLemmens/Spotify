@@ -23,6 +23,7 @@
         ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             GbUnder = new GroupBox();
             LbArtiest = new Label();
             LbSongName = new Label();
@@ -30,13 +31,13 @@
             BtnNext = new PictureBox();
             BtnPlayStop = new PictureBox();
             GbSidebar = new GroupBox();
+            BtnFriends = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
             LbPlaylist = new Label();
             BtnCreatePlayList = new Button();
             BtnSearch = new Button();
             BtnHome = new Button();
             GbMainSection = new GroupBox();
-            BtnFriends = new Button();
             GbUnder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) BtnPrev).BeginInit();
             ((System.ComponentModel.ISupportInitialize) BtnNext).BeginInit();
@@ -124,6 +125,15 @@
             GbSidebar.TabIndex = 1;
             GbSidebar.TabStop = false;
             // 
+            // BtnFriends
+            // 
+            BtnFriends.Location = new Point(6, 98);
+            BtnFriends.Name = "BtnFriends";
+            BtnFriends.Size = new Size(145, 33);
+            BtnFriends.TabIndex = 5;
+            BtnFriends.Text = "Friends";
+            BtnFriends.UseVisualStyleBackColor = true;
+            // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Location = new Point(0, 203);
@@ -167,6 +177,7 @@
             BtnHome.TabIndex = 0;
             BtnHome.Text = "Home";
             BtnHome.UseVisualStyleBackColor = true;
+            BtnHome.Click += BtnHome_Click;
             // 
             // GbMainSection
             // 
@@ -176,15 +187,6 @@
             GbMainSection.TabIndex = 2;
             GbMainSection.TabStop = false;
             // 
-            // BtnFriends
-            // 
-            BtnFriends.Location = new Point(6, 98);
-            BtnFriends.Name = "BtnFriends";
-            BtnFriends.Size = new Size(145, 33);
-            BtnFriends.TabIndex = 5;
-            BtnFriends.Text = "Friends";
-            BtnFriends.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -193,10 +195,13 @@
             Controls.Add(GbMainSection);
             Controls.Add(GbSidebar);
             Controls.Add(GbUnder);
+            Icon = (Icon) resources.GetObject("$this.Icon");
             MaximumSize = new Size(967, 594);
             MinimumSize = new Size(967, 594);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Spotify";
+            FormClosed += Form1_FormClosed;
             GbUnder.ResumeLayout(false);
             GbUnder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize) BtnPrev).EndInit();
