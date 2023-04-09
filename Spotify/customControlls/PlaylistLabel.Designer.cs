@@ -23,31 +23,32 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            LbPlaylistName = new Label();
-            SuspendLayout();
+            this.LbPlaylistName = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // LbPlaylistName
             // 
-            LbPlaylistName.AutoSize = true;
-            LbPlaylistName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            LbPlaylistName.Location = new Point(3, 7);
-            LbPlaylistName.Name = "LbPlaylistName";
-            LbPlaylistName.Size = new Size(99, 21);
-            LbPlaylistName.TabIndex = 0;
-            LbPlaylistName.Text = "Summer hits";
-            LbPlaylistName.Click += LbPlaylistName_Click;
-            LbPlaylistName.MouseEnter += LbPlaylistName_MouseEnter;
-            LbPlaylistName.MouseLeave += LbPlaylistName_MouseLeave;
+            this.LbPlaylistName.AutoSize = true;
+            this.LbPlaylistName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LbPlaylistName.Location = new System.Drawing.Point(0, 0);
+            this.LbPlaylistName.Name = "LbPlaylistName";
+            this.LbPlaylistName.Size = new System.Drawing.Size(99, 21);
+            this.LbPlaylistName.TabIndex = 0;
+            this.LbPlaylistName.Text = "Summer hits";
+            this.LbPlaylistName.Click += new System.EventHandler(this.LbPlaylistName_Click);
+            this.LbPlaylistName.MouseEnter += new System.EventHandler(this.LbPlaylistName_MouseEnter);
+            this.LbPlaylistName.MouseLeave += new System.EventHandler(this.LbPlaylistName_MouseLeave);
             // 
             // PlaylistLabel
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(LbPlaylistName);
-            Name = "PlaylistLabel";
-            Size = new Size(150, 35);
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.LbPlaylistName);
+            this.Name = "PlaylistLabel";
+            this.Size = new System.Drawing.Size(150, 24);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

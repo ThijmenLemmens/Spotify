@@ -7,9 +7,17 @@ using Spotify.util.opnamens;
 
 namespace Spotify.util.afspeellijsten {
 
-    internal class Speellijsten : Lijst {
+    public class Playlist : Lijst {
+
+        public Int32 id {
+            get; set;
+        }
 
         private static Random random = new();
+
+        public Playlist(Int32 id) {
+            this.id = id;
+        }
 
         public void shuffle() {
             int count = items.Count;

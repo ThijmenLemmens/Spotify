@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Spotify.util.opnamens {
-    internal class Opnamen {
+    public class Opnamen {
 
         public string name {
             get; set; 
         }
 
-        public List<string> maker;
+        public List<string> creator;
 
         public int id {
             get; set; 
@@ -22,7 +22,7 @@ namespace Spotify.util.opnamens {
         }
 
         public Opnamen() {
-            maker = new();
+            creator = new();
         }
     }
 }
