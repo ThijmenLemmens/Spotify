@@ -27,6 +27,7 @@ namespace Spotify {
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.GbUnder = new System.Windows.Forms.GroupBox();
+            this.CbRepeat = new System.Windows.Forms.CheckBox();
             this.LbArtiest = new System.Windows.Forms.Label();
             this.LbSongName = new System.Windows.Forms.Label();
             this.BtnPrev = new System.Windows.Forms.PictureBox();
@@ -49,6 +50,7 @@ namespace Spotify {
             // 
             // GbUnder
             // 
+            this.GbUnder.Controls.Add(this.CbRepeat);
             this.GbUnder.Controls.Add(this.LbArtiest);
             this.GbUnder.Controls.Add(this.LbSongName);
             this.GbUnder.Controls.Add(this.BtnPrev);
@@ -59,6 +61,17 @@ namespace Spotify {
             this.GbUnder.Size = new System.Drawing.Size(954, 108);
             this.GbUnder.TabIndex = 0;
             this.GbUnder.TabStop = false;
+            // 
+            // CbRepeat
+            // 
+            this.CbRepeat.AutoSize = true;
+            this.CbRepeat.Location = new System.Drawing.Point(886, 28);
+            this.CbRepeat.Name = "CbRepeat";
+            this.CbRepeat.Size = new System.Drawing.Size(62, 19);
+            this.CbRepeat.TabIndex = 5;
+            this.CbRepeat.Text = "Repeat";
+            this.CbRepeat.UseVisualStyleBackColor = true;
+            this.CbRepeat.CheckedChanged += new System.EventHandler(this.CbRepeat_CheckedChanged);
             // 
             // LbArtiest
             // 
@@ -72,11 +85,11 @@ namespace Spotify {
             // 
             // LbSongName
             // 
-            this.LbSongName.AutoSize = true;
+            this.LbSongName.AutoEllipsis = true;
             this.LbSongName.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LbSongName.Location = new System.Drawing.Point(12, 22);
             this.LbSongName.Name = "LbSongName";
-            this.LbSongName.Size = new System.Drawing.Size(127, 30);
+            this.LbSongName.Size = new System.Drawing.Size(209, 30);
             this.LbSongName.TabIndex = 3;
             this.LbSongName.Text = "Song Name";
             // 
@@ -139,7 +152,7 @@ namespace Spotify {
             this.FlpPlaylist.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.FlpPlaylist.Location = new System.Drawing.Point(0, 203);
             this.FlpPlaylist.Name = "FlpPlaylist";
-            this.FlpPlaylist.Size = new System.Drawing.Size(163, 260);
+            this.FlpPlaylist.Size = new System.Drawing.Size(157, 260);
             this.FlpPlaylist.TabIndex = 4;
             // 
             // LbPlaylist
@@ -233,5 +246,6 @@ namespace Spotify {
         private FlowLayoutPanel FlpPlaylist;
         private Label LbPlaylist;
         private Button BtnFriends;
+        private CheckBox CbRepeat;
     }
 }

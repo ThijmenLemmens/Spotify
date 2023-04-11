@@ -2,6 +2,7 @@ using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using Spotify.customControlls;
 using Spotify.Properties;
+using Spotify.sql;
 using Spotify.util.afspeellijsten;
 using Spotify.util.opnamens;
 using System.Data.SqlTypes;
@@ -19,6 +20,8 @@ namespace Spotify {
 
         public static List<Playlist> playlists;
 
+        public static bool repeat = false;
+
         public Form1(Account account) {
             Form1.account = account;
             InitializeComponent();
@@ -26,6 +29,7 @@ namespace Spotify {
             playlists = new();
             playlists = getPlayList();
             addSongs();
+            GbMainSection.Controls.Add(new HomeView());
 
             FlpPlaylist.HorizontalScroll.Maximum = 0;
             FlpPlaylist.AutoScroll = false;
@@ -83,7 +87,7 @@ namespace Spotify {
 
         private void BtnSearch_Click(Object sender, EventArgs e) {
             GbMainSection.Controls.Clear();
-            GbMainSection.Controls.Add(new SearchView());
+            GbMainSection.Controls.Add(new SearchView(GbMainSection));
         }
 
         private void Form1_Load(Object sender, EventArgs e) {
@@ -132,31 +136,8 @@ namespace Spotify {
         private void addSongs() {
             playlists.ForEach(playlist => {
                 if (playlist.rawJson != null) 
-                    getAllSongs(playlist, playlist.rawJson);
+                    SqlSong.getAllSongs(playlist, playlist.rawJson);
             });
-        }
-
-        private void getAllSongs(Playlist playlist, string jsonString) {
-            
-            List<Int32> songIds = JsonConvert.DeserializeObject<List<Int32>>(jsonString);
-
-            MySqlCommand cmd = con.CreateCommand();
-
-            cmd.CommandText = "SELECT * FROM opnames";
-
-            using MySqlDataReader data = cmd.ExecuteReader();
-
-            while (data.Read()) {
-
-                if (songIds.Contains(data.GetInt32("id"))) {
-                    playlist.items.Add(new Opnamen() {
-                        id = data.GetInt32("id"),
-                        creator = JsonConvert.DeserializeObject<List<string>>(data.GetString("creator")),
-                        url = data.GetString("url"),
-                        name = data.GetString("name"),
-                    });
-                }
-            }
         }
 
         private void updatePlaylist() {
@@ -166,5 +147,11 @@ namespace Spotify {
             });
         }
 
+        private void CbRepeat_CheckedChanged(Object sender, EventArgs e) {
+            if (CbRepeat.Checked)
+                repeat = true;
+            else
+                repeat = false;
+        }
     }
 }

@@ -17,71 +17,37 @@ namespace Spotify {
 
         private static bool playing = false;
 
-        private async void button3_Click(Object sender, EventArgs e) {
-            string url = "https://download.samplelib.com/mp3/sample-15s.mp3";
-
-            using MemoryStream memoryStream = new();
-            Stream stream = client.GetStreamAsync(url).Result;
-            //byte[] buffer = new byte[32768];
-            //int read;
-            //while ((read = stream.Read(buffer, 0, buffer.Length)) > 0)
-            //    memoryStream.Write(buffer, 0, read);
-
-            //stream.CopyTo(memoryStream);
-
-            //memoryStream.Seek(0, SeekOrigin.Begin);
-
-            stream.Seek(0, SeekOrigin.Begin);
-
-            using WaveStream blockAlignedStream =
-                new BlockAlignReductionStream(
-                    WaveFormatConversionStream.CreatePcmStream(
-                        new Mp3FileReader(stream)));
-
-            waveOut.Init(blockAlignedStream);
-            waveOut.Play();
-
-            while (waveOut.PlaybackState == PlaybackState.Playing) {
-                System.Threading.Thread.Sleep(100);
-            }
-
-            memoryStream.Close();
-        }
-
         public static void play(string url) {
             if (playing)
                 return;
 
-            using MemoryStream memoryStream = new();
-
             byte[] stream = client.GetByteArrayAsync(url).Result;
 
-            //byte[] buffer = new byte[32768];
-
-            //stream.CopyTo(memoryStream);
-
-            //memoryStream.Seek(0, SeekOrigin.Begin);
-
-            //currentStream = memoryStream;
+            MemoryStream memoryStream = new(stream);
 
             using WaveStream blockAlignedStream =
                 new BlockAlignReductionStream(
                     WaveFormatConversionStream.CreatePcmStream(
-                        new Mp3FileReader(new MemoryStream(stream))));
+                        new Mp3FileReader(memoryStream)));
 
             waveOut = new(WaveCallbackInfo.FunctionCallback());
 
             waveOut.Init(blockAlignedStream);
-            waveOut.Play();
 
-            playing = true;
+            do {
+                waveOut.Play();
 
-            while (waveOut.PlaybackState == PlaybackState.Playing || waveOut.PlaybackState == PlaybackState.Paused) {
-                System.Threading.Thread.Sleep(100);
-            }
+                playing = true;
+
+                while (waveOut.PlaybackState == PlaybackState.Playing || waveOut.PlaybackState == PlaybackState.Paused) {
+                    System.Threading.Thread.Sleep(100);
+                }
+
+                memoryStream.Position = 0;
+            } while (Form1.repeat);
 
             waveOut.Dispose();
-            memoryStream.Close();
+            memoryStream.Dispose();
 
             playing = false;
         }

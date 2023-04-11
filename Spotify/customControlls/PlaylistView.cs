@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
+using Spotify.sql;
 using Spotify.util.afspeellijsten;
 using System;
 using System.Collections.Generic;
@@ -22,17 +23,17 @@ namespace Spotify.customControlls {
 
         private PlaylistLabel playlistLabel;
 
+
         public PlaylistView(Playlist playlist, PlaylistLabel playlistLabel) {
             InitializeComponent();
             this.playlist = playlist;
             LbPlaylistName.Text = playlist.Name;
             this.playlistLabel = playlistLabel;
             setOwners();
-            addSongToContainer();
         }
 
         private void PlaylistView_Load(Object sender, EventArgs e) {
-
+            addSongToContainer();
         }
 
         private void BtnDelete_Click(Object sender, EventArgs e) {
@@ -88,6 +89,10 @@ namespace Spotify.customControlls {
         }
 
         private void BtnCopyListInto_Click(Object sender, EventArgs e) {
+
+        }
+
+        private void BtnCompare_Click(Object sender, EventArgs e) {
 
         }
     }

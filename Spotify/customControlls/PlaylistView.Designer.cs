@@ -40,9 +40,9 @@
             this.LbPlaylistName.Font = new System.Drawing.Font("Microsoft YaHei", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LbPlaylistName.Location = new System.Drawing.Point(12, 14);
             this.LbPlaylistName.Name = "LbPlaylistName";
-            this.LbPlaylistName.Size = new System.Drawing.Size(339, 62);
+            this.LbPlaylistName.Size = new System.Drawing.Size(351, 62);
             this.LbPlaylistName.TabIndex = 0;
-            this.LbPlaylistName.Text = "Playlist Name";
+            this.LbPlaylistName.Text = "PlayList Name";
             this.LbPlaylistName.Click += new System.EventHandler(this.LbPlaylistName_Click);
             // 
             // FlpOpnamens
@@ -91,6 +91,7 @@
             this.BtnCompare.TabIndex = 5;
             this.BtnCompare.Text = "Compare";
             this.BtnCompare.UseVisualStyleBackColor = true;
+            this.BtnCompare.Click += new System.EventHandler(this.BtnCompare_Click);
             // 
             // BtnCopyListInto
             // 

@@ -57,11 +57,17 @@
             // 
             // CbCats
             // 
+            this.CbCats.BackColor = System.Drawing.SystemColors.Window;
+            this.CbCats.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbCats.FormattingEnabled = true;
+            this.CbCats.Items.AddRange(new object[] {
+            "Songs",
+            "Album"});
             this.CbCats.Location = new System.Drawing.Point(306, 104);
             this.CbCats.Name = "CbCats";
             this.CbCats.Size = new System.Drawing.Size(121, 23);
             this.CbCats.TabIndex = 3;
+            this.CbCats.SelectedIndexChanged += new System.EventHandler(this.CbCats_SelectedIndexChanged);
             // 
             // LbDiscover
             // 

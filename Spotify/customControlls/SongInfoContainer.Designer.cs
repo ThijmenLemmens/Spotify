@@ -26,16 +26,17 @@
             this.LbSongName = new System.Windows.Forms.Label();
             this.PbPlay = new System.Windows.Forms.PictureBox();
             this.CbPlaylist = new System.Windows.Forms.ComboBox();
+            this.LbArtiestName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PbPlay)).BeginInit();
             this.SuspendLayout();
             // 
             // LbSongName
             // 
-            this.LbSongName.AutoSize = true;
-            this.LbSongName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LbSongName.Location = new System.Drawing.Point(51, 7);
+            this.LbSongName.AutoEllipsis = true;
+            this.LbSongName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LbSongName.Location = new System.Drawing.Point(51, -1);
             this.LbSongName.Name = "LbSongName";
-            this.LbSongName.Size = new System.Drawing.Size(80, 19);
+            this.LbSongName.Size = new System.Drawing.Size(217, 30);
             this.LbSongName.TabIndex = 0;
             this.LbSongName.Text = "Song Name";
             // 
@@ -44,7 +45,7 @@
             this.PbPlay.Image = global::Spotify.Properties.Resource.play_buttton;
             this.PbPlay.Location = new System.Drawing.Point(3, 2);
             this.PbPlay.Name = "PbPlay";
-            this.PbPlay.Size = new System.Drawing.Size(31, 29);
+            this.PbPlay.Size = new System.Drawing.Size(34, 29);
             this.PbPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PbPlay.TabIndex = 1;
             this.PbPlay.TabStop = false;
@@ -60,10 +61,21 @@
             this.CbPlaylist.TabIndex = 2;
             this.CbPlaylist.SelectedIndexChanged += new System.EventHandler(this.CbPlaylist_SelectedIndexChanged);
             // 
+            // LbArtiestName
+            // 
+            this.LbArtiestName.AutoEllipsis = true;
+            this.LbArtiestName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LbArtiestName.Location = new System.Drawing.Point(53, 20);
+            this.LbArtiestName.Name = "LbArtiestName";
+            this.LbArtiestName.Size = new System.Drawing.Size(214, 13);
+            this.LbArtiestName.TabIndex = 3;
+            this.LbArtiestName.Text = "ArtiestName";
+            // 
             // SongInfoContainer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.LbArtiestName);
             this.Controls.Add(this.CbPlaylist);
             this.Controls.Add(this.PbPlay);
             this.Controls.Add(this.LbSongName);
@@ -71,7 +83,6 @@
             this.Size = new System.Drawing.Size(640, 34);
             ((System.ComponentModel.ISupportInitialize)(this.PbPlay)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -80,5 +91,6 @@
         private Label LbSongName;
         private PictureBox PbPlay;
         private ComboBox CbPlaylist;
+        private Label LbArtiestName;
     }
 }

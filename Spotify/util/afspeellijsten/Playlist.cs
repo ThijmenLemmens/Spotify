@@ -9,10 +9,6 @@ namespace Spotify.util.afspeellijsten {
 
     public class Playlist : Lijst {
 
-        public Int32 id {
-            get; set;
-        }
-
         private static Random random = new();
 
         public Playlist(Int32 id) {

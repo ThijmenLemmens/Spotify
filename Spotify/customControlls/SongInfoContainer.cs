@@ -22,11 +22,16 @@ namespace Spotify.customControlls {
 
         private MySqlConnection con = Database.Instance().Connection;
 
+        private Label songName;
+        private Label artiestName;
+
         public SongInfoContainer(Opnamen opnamen) {
             InitializeComponent();
             this.opnamen = opnamen;
 
             LbSongName.Text = opnamen.name;
+
+            setOwners();
 
             playlists.ForEach(playlist => {
                 CbPlaylist.Items.Add(playlist.Name);
@@ -35,6 +40,21 @@ namespace Spotify.customControlls {
          
         private void PbPlay_Click(Object sender, EventArgs e) {
             Task.Run(() => MediaPlayer.play(opnamen.url));
+        }
+
+        private void setOwners() {
+            StringBuilder builder = new();
+
+            for (Int32 i = 0; i < opnamen.creator.Count; i++) {
+                if (i == 0) {
+                    builder.Append(opnamen.creator[i]);
+                    continue;
+                }
+
+                builder.Append($", {opnamen.creator[i]}");
+            }
+
+            LbArtiestName.Text = builder.ToString();
         }
 
         private void CbPlaylist_SelectedIndexChanged(Object sender, EventArgs e) {

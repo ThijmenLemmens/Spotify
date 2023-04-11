@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Spotify.util.afspeellijsten {
 
-    internal class Album {
+    public class Album : Lijst {
 
         public List<string> artiestNames;
 
