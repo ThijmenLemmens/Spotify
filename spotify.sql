@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2023 at 11:40 AM
+-- Generation Time: Apr 11, 2023 at 10:33 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -55,6 +55,13 @@ CREATE TABLE `album` (
   `artiest_names` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`artiest_names`))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `album`
+--
+
+INSERT INTO `album` (`id`, `name`, `song_ids`, `artiest_names`) VALUES
+(1, 'Samples - De Bangers', '[1, 2]', '[\"Thijmen\", \"Enja\"]');
+
 -- --------------------------------------------------------
 
 --
@@ -94,15 +101,9 @@ CREATE TABLE `playlist` (
 --
 
 INSERT INTO `playlist` (`id`, `name`, `owner_ids`, `opnamen_ids`) VALUES
-(1, 'new Playlist', '[1]', '[1]'),
 (2, 'new Playlist', '[2]', NULL),
-(8, 'new Playlist', '[]', NULL),
-(12, 'new Playlist', '[]', NULL),
-(13, 'new Playlist', '[]', NULL),
-(14, 'new Playlist', '[]', NULL),
-(15, 'new Playlist', '[]', NULL),
-(16, 'new Playlist', '[]', NULL),
-(17, 'new Playlist', '[]', NULL);
+(21, 'new Playlist', '[]', '[2]'),
+(23, 'new Playlist', '[1]', '[1,2]');
 
 --
 -- Indexes for dumped tables
@@ -146,7 +147,7 @@ ALTER TABLE `accounts`
 -- AUTO_INCREMENT for table `album`
 --
 ALTER TABLE `album`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `opnames`
@@ -158,7 +159,7 @@ ALTER TABLE `opnames`
 -- AUTO_INCREMENT for table `playlist`
 --
 ALTER TABLE `playlist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
