@@ -1,5 +1,5 @@
 ﻿namespace Spotify.customControlls {
-    partial class HomeView {
+    partial class FriendLabel {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
@@ -23,45 +23,34 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            Lbwelkom = new Label();
-            LbName = new Label();
+            LbFriendName = new Label();
             SuspendLayout();
             // 
-            // Lbwelkom
+            // LbFriendName
             // 
-            Lbwelkom.AutoSize = true;
-            Lbwelkom.Font = new Font("Corbel", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
-            Lbwelkom.Location = new Point(21, 14);
-            Lbwelkom.Name = "Lbwelkom";
-            Lbwelkom.Size = new Size(113, 36);
-            Lbwelkom.TabIndex = 0;
-            Lbwelkom.Text = "Welkom";
+            LbFriendName.AutoEllipsis = true;
+            LbFriendName.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            LbFriendName.Location = new Point(0, 0);
+            LbFriendName.Name = "LbFriendName";
+            LbFriendName.Size = new Size(139, 26);
+            LbFriendName.TabIndex = 0;
+            LbFriendName.Text = "FriendName";
+            LbFriendName.Click += LbFriendName_Click;
+            LbFriendName.MouseEnter += LbFriendName_MouseEnter;
+            LbFriendName.MouseLeave += LbFriendName_MouseLeave;
             // 
-            // LbName
-            // 
-            LbName.AutoSize = true;
-            LbName.Font = new Font("Corbel", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
-            LbName.Location = new Point(153, 40);
-            LbName.Name = "LbName";
-            LbName.Size = new Size(0, 36);
-            LbName.TabIndex = 1;
-            // 
-            // HomeView
+            // FriendLabel
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(LbName);
-            Controls.Add(Lbwelkom);
-            Name = "HomeView";
-            Size = new Size(797, 466);
-            Load += HomeView_Load;
+            Controls.Add(LbFriendName);
+            Name = "FriendLabel";
+            Size = new Size(139, 26);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label Lbwelkom;
-        private Label LbName;
+        private Label LbFriendName;
     }
 }

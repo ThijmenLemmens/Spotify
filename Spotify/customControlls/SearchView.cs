@@ -53,7 +53,7 @@ namespace Spotify.customControlls {
 
             while (data.Read()) {
                 opnamens.Add(new Opnamen() {
-                    id = data.GetInt32("id"), 
+                    id = data.GetInt32("id"),
                     name = data.GetString("name"),
                     creator = JsonConvert.DeserializeObject<List<string>>(data.GetString("creator")),
                     url = data.GetString("url")
@@ -86,7 +86,7 @@ namespace Spotify.customControlls {
 
                     opnamens.ForEach(opnamen => {
                         if (songIds.Contains(opnamen.id))
-                            album.items.Add(opnamen);   
+                            album.items.Add(opnamen);
                     });
 
                 } catch (SqlNullValueException) { }

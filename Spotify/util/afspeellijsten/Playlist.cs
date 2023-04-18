@@ -15,6 +15,7 @@ namespace Spotify.util.afspeellijsten {
             this.id = id;
         }
 
+
         public void shuffle() {
             int count = items.Count;
             while (count > 1) {
@@ -25,5 +26,11 @@ namespace Spotify.util.afspeellijsten {
                 items[count] = value;
             }
         }
+
+        public override Boolean Equals(Object? obj) {
+            return obj is Playlist playlist &&
+                   Name == playlist.Name;
+        }
+        
     }
 }

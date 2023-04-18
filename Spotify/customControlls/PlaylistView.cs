@@ -42,7 +42,7 @@ namespace Spotify.customControlls {
             MySqlCommand cmd = con.CreateCommand();
 
             if (playlist.owners.Count == 1) {
-                cmd.CommandText = "DELETE FROM playlist WHERE id = ?id";    
+                cmd.CommandText = "DELETE FROM playlist WHERE id = ?id";
             } else {
                 cmd.CommandText = "UPDATE playlist SET owner_ids = ?owner_ids WHERE id = ?id";
                 cmd.Parameters.AddWithValue("?owner_ids", JsonConvert.SerializeObject(playlist.owners));
