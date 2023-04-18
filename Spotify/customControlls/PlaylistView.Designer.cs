@@ -27,9 +27,6 @@
             FlpOpnamens = new FlowLayoutPanel();
             CbShuffle = new CheckBox();
             LbCreator = new Label();
-            BtnCopyList = new Button();
-            BtnCompare = new Button();
-            BtnCopyListInto = new Button();
             LbOwnedBy = new Label();
             BtnDelete = new Button();
             SuspendLayout();
@@ -73,36 +70,6 @@
             LbCreator.TabIndex = 3;
             LbCreator.Text = "Owners";
             // 
-            // BtnCopyList
-            // 
-            BtnCopyList.Location = new Point(142, 106);
-            BtnCopyList.Name = "BtnCopyList";
-            BtnCopyList.Size = new Size(90, 23);
-            BtnCopyList.TabIndex = 4;
-            BtnCopyList.Text = "Copy List";
-            BtnCopyList.UseVisualStyleBackColor = true;
-            BtnCopyList.Click += BtnCopyList_Click;
-            // 
-            // BtnCompare
-            // 
-            BtnCompare.Location = new Point(238, 106);
-            BtnCompare.Name = "BtnCompare";
-            BtnCompare.Size = new Size(90, 23);
-            BtnCompare.TabIndex = 5;
-            BtnCompare.Text = "Compare";
-            BtnCompare.UseVisualStyleBackColor = true;
-            BtnCompare.Click += BtnCompare_Click;
-            // 
-            // BtnCopyListInto
-            // 
-            BtnCopyListInto.Location = new Point(334, 106);
-            BtnCopyListInto.Name = "BtnCopyListInto";
-            BtnCopyListInto.Size = new Size(110, 23);
-            BtnCopyListInto.TabIndex = 6;
-            BtnCopyListInto.Text = "Copy list into";
-            BtnCopyListInto.UseVisualStyleBackColor = true;
-            BtnCopyListInto.Click += BtnCopyListInto_Click;
-            // 
             // LbOwnedBy
             // 
             LbOwnedBy.AutoSize = true;
@@ -115,7 +82,7 @@
             // 
             // BtnDelete
             // 
-            BtnDelete.Location = new Point(450, 106);
+            BtnDelete.Location = new Point(142, 107);
             BtnDelete.Name = "BtnDelete";
             BtnDelete.Size = new Size(75, 23);
             BtnDelete.TabIndex = 8;
@@ -129,9 +96,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(BtnDelete);
             Controls.Add(LbOwnedBy);
-            Controls.Add(BtnCopyListInto);
-            Controls.Add(BtnCompare);
-            Controls.Add(BtnCopyList);
             Controls.Add(LbCreator);
             Controls.Add(CbShuffle);
             Controls.Add(FlpOpnamens);
@@ -149,9 +113,6 @@
         private FlowLayoutPanel FlpOpnamens;
         private CheckBox CbShuffle;
         private Label LbCreator;
-        private Button BtnCopyList;
-        private Button BtnCompare;
-        private Button BtnCopyListInto;
         private Label LbOwnedBy;
         private Button BtnDelete;
     }

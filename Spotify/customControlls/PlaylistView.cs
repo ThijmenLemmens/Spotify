@@ -29,7 +29,8 @@ namespace Spotify.customControlls {
             this.playlist = playlist;
             LbPlaylistName.Text = playlist.Name;
             this.playlistLabel = playlistLabel;
-            setOwners();
+
+            LbCreator.Text = Util.setOwners(playlist);
         }
 
         private void PlaylistView_Load(Object sender, EventArgs e) {
@@ -65,35 +66,9 @@ namespace Spotify.customControlls {
             });
         }
 
-        private void setOwners() {
-            StringBuilder builder = new();
-
-            for (Int32 i = 0; i < playlist.owners.Count; i++) {
-                if (i == 0) {
-                    builder.Append(playlist.owners[i].name);
-                    continue;
-                }
-
-                builder.Append($", {playlist.owners[i].name}");
-            }
-
-            LbCreator.Text = builder.ToString();
-        }
-
         private void LbPlaylistName_Click(Object sender, EventArgs e) {
 
         }
 
-        private void BtnCopyList_Click(Object sender, EventArgs e) {
-
-        }
-
-        private void BtnCopyListInto_Click(Object sender, EventArgs e) {
-
-        }
-
-        private void BtnCompare_Click(Object sender, EventArgs e) {
-
-        }
     }
 }
