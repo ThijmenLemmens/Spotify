@@ -27,7 +27,8 @@ namespace Spotify {
             InitializeComponent();
             this.Text = $"Spotify | {account.name}";
             playlists = new();
-            playlists = getPlayList();
+            SqlQuery.getAllFriends(account);
+            playlists = SqlQuery.getPlayList(account);
             addSongs();
             GbMainSection.Controls.Add(new HomeView());
 
@@ -81,8 +82,9 @@ namespace Spotify {
 
             cmd.ExecuteNonQuery();
 
-            playlists = getPlayList();
+            playlists = SqlQuery.getPlayList(account);
             updatePlaylist();
+            addSongs();
         }
 
         private void BtnSearch_Click(Object sender, EventArgs e) {
@@ -90,8 +92,13 @@ namespace Spotify {
             GbMainSection.Controls.Add(new SearchView(GbMainSection));
         }
 
+        private void BtnFriends_Click(Object sender, EventArgs e) {
+            GbMainSection.Controls.Clear();
+            GbMainSection.Controls.Add(new FriendsView());
+        }
+
         private void Form1_Load(Object sender, EventArgs e) {
-           updatePlaylist();
+            updatePlaylist();
         }
 
         private void Form1_FormClosed(Object sender, FormClosedEventArgs e) {
@@ -99,51 +106,20 @@ namespace Spotify {
         }
 
         private void Form1_Shown(Object sender, EventArgs e) {
-            
-        }
 
-        private List<Playlist> getPlayList() {
-            Form1.playlists.Clear();
-
-            List<Playlist> playlists = new();
-
-            MySqlCommand cmd = con.CreateCommand();
-
-            cmd.CommandText = "SELECT * FROM playlist";
-
-            using MySqlDataReader data = cmd.ExecuteReader();
-
-            while (data.Read()) {
-                Playlist playlist = new(data.GetInt32("id"));
-
-                List<Int32> owners = JsonConvert.DeserializeObject<List<Int32>>(data.GetString("owner_ids"));
-
-                if (owners.Contains(account.id)) {
-                    playlist.owners.Add(account);
-                    playlist.Name = data.GetString("name");
-
-                    try {
-                        playlist.rawJson = data.GetString("opnamen_ids");
-                    } catch (SqlNullValueException) { }
-
-                    playlists.Add(playlist);
-                }
-            }
-
-            return playlists;
         }
 
         private void addSongs() {
             playlists.ForEach(playlist => {
-                if (playlist.rawJson != null) 
-                    SqlSong.getAllSongs(playlist, playlist.rawJson);
+                if (playlist.rawJson != null)
+                    SqlQuery.getAllSongs(playlist);
             });
         }
 
         private void updatePlaylist() {
             FlpPlaylist.Controls.Clear();
             playlists.ForEach(playlist => {
-                FlpPlaylist.Controls.Add(new PlaylistLabel(playlist, GbMainSection, FlpPlaylist));
+                FlpPlaylist.Controls.Add(new PlaylistLabel(playlist, GbMainSection));
             });
         }
 
@@ -153,5 +129,6 @@ namespace Spotify {
             else
                 repeat = false;
         }
+
     }
 }

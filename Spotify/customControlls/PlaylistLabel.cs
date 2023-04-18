@@ -17,15 +17,12 @@ namespace Spotify.customControlls {
 
         private GroupBox gbMainSection;
 
-        private FlowLayoutPanel flowlayout;
-
-        public PlaylistLabel(Playlist playlist, GroupBox gbMainSection, FlowLayoutPanel flowLayout) {
+        public PlaylistLabel(Playlist playlist, GroupBox gbMainSection) {
             InitializeComponent();
             this.playlist = playlist;
             LbPlaylistName.Text = playlist.Name;
             LbPlaylistName.ForeColor = Color.DarkGray;
             this.gbMainSection = gbMainSection;
-            this.flowlayout = flowLayout;
         }
 
         private void LbPlaylistName_Click(Object sender, EventArgs e) {

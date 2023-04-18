@@ -1,6 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using Newtonsoft.Json;
-using Spotify.sql;
+﻿using Spotify.sql;
 using Spotify.util.afspeellijsten;
 using Spotify.util.opnamens;
 using System;
@@ -14,20 +12,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Spotify.customControlls {
-
-    public partial class SongInfoContainer : UserControl {
+    public partial class FriendSongContainer : UserControl {
 
         private List<Playlist> playlists = Form1.playlists;
 
         private Opnamen opnamen;
 
-        public SongInfoContainer(Opnamen opnamen) {
+        public FriendSongContainer(Opnamen opnamen) {
             InitializeComponent();
+
             this.opnamen = opnamen;
 
-            LbSongName.Text = opnamen.name;
-
-            LbArtiestName.Text = Util.setOwners(opnamen);
+            LbSongName.Text = this.opnamen.name;
+            LbArtiestName.Text = Util.setOwners(this.opnamen);
 
             playlists.ForEach(playlist => {
                 CbPlaylist.Items.Add(playlist.Name);

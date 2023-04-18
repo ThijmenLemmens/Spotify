@@ -1,5 +1,5 @@
 ﻿namespace Spotify.customControlls {
-    partial class HomeView {
+    partial class FriendPlaylistLabel {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
@@ -23,45 +23,34 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            Lbwelkom = new Label();
-            LbName = new Label();
+            LbFriendPlaylist = new Label();
             SuspendLayout();
             // 
-            // Lbwelkom
+            // LbFriendPlaylist
             // 
-            Lbwelkom.AutoSize = true;
-            Lbwelkom.Font = new Font("Corbel", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
-            Lbwelkom.Location = new Point(21, 14);
-            Lbwelkom.Name = "Lbwelkom";
-            Lbwelkom.Size = new Size(113, 36);
-            Lbwelkom.TabIndex = 0;
-            Lbwelkom.Text = "Welkom";
+            LbFriendPlaylist.AutoEllipsis = true;
+            LbFriendPlaylist.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            LbFriendPlaylist.Location = new Point(0, 0);
+            LbFriendPlaylist.Name = "LbFriendPlaylist";
+            LbFriendPlaylist.Size = new Size(124, 24);
+            LbFriendPlaylist.TabIndex = 0;
+            LbFriendPlaylist.Text = "PlaylistName";
+            LbFriendPlaylist.Click += LbFriendPlaylist_Click;
+            LbFriendPlaylist.MouseEnter += LbFriendPlaylist_MouseEnter;
+            LbFriendPlaylist.MouseLeave += LbFriendPlaylist_MouseLeave;
             // 
-            // LbName
-            // 
-            LbName.AutoSize = true;
-            LbName.Font = new Font("Corbel", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
-            LbName.Location = new Point(153, 40);
-            LbName.Name = "LbName";
-            LbName.Size = new Size(0, 36);
-            LbName.TabIndex = 1;
-            // 
-            // HomeView
+            // FriendPlaylistLabel
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(LbName);
-            Controls.Add(Lbwelkom);
-            Name = "HomeView";
-            Size = new Size(797, 466);
-            Load += HomeView_Load;
+            Controls.Add(LbFriendPlaylist);
+            Name = "FriendPlaylistLabel";
+            Size = new Size(124, 24);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label Lbwelkom;
-        private Label LbName;
+        private Label LbFriendPlaylist;
     }
 }

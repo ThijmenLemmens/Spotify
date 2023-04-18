@@ -39,7 +39,7 @@ namespace Spotify.customControlls {
 
             cmd.Parameters.AddWithValue("?opnamen_ids", JsonConvert.SerializeObject(playlist.items));
             cmd.Parameters.AddWithValue("?id", playlist.id);
-            
+
             cmd.ExecuteNonQuery();
 
             this.Dispose();

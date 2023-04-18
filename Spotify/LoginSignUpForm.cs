@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
+using Spotify.sql;
 using System.Data.SqlTypes;
 
 namespace Spotify {
@@ -32,7 +33,7 @@ namespace Spotify {
 
         private void login(object sender, EventArgs e) {
 
-            Account? account = selectAccount();
+            Account? account = SqlQuery.selectAccount(TbAccountName.Text);
 
             if (account == null) {
                 MessageBox.Show("Account does not exists!");
@@ -59,7 +60,7 @@ namespace Spotify {
 
         private void signUp(object sender, EventArgs e) {
 
-            if (selectAccount() != null) {
+            if (SqlQuery.selectAccount(TbAccountName.Text) != null) {
                 MessageBox.Show("Account already exists!");
                 return;
             }
@@ -74,33 +75,6 @@ namespace Spotify {
             cmd.ExecuteNonQuery();
 
             reset();
-        }
-
-        private Account? selectAccount() {
-            Account? account = null;
-
-            MySqlCommand cmd = con.CreateCommand();
-
-            cmd.CommandText = "SELECT * FROM accounts WHERE user_name = ?user_name";
-
-            cmd.Parameters.AddWithValue("?user_name", TbAccountName.Text);
-
-            using MySqlDataReader data = cmd.ExecuteReader();
-
-            while (data.Read()) {
-                account = new();
-                account.id = data.GetInt32(0);
-                account.name = data.GetString(1);
-                account.password = data.GetString(2);
-
-                try {
-                    account.friendIds = JsonConvert.DeserializeObject<List<Int32>>(data.GetString(3));
-                } catch (SqlNullValueException) {
-                    account.friendIds = null;
-                }
-            }
-
-            return account;
         }
 
         private void reset() {

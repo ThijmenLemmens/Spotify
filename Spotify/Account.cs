@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spotify.util.afspeellijsten;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +21,16 @@ namespace Spotify {
             get; set; 
         }
 
-        public List<int> ?friendIds;
+        public List<Int32> ?friendIds;
+
+        public List<Account>? friends;
+
+        public List<Playlist> playlists;
 
         public Account() {
             friendIds = new();
+            playlists = new();
+            friends = new();
         }
     }
 }

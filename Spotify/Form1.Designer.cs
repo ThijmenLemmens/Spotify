@@ -26,208 +26,208 @@ namespace Spotify {
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.GbUnder = new System.Windows.Forms.GroupBox();
-            this.CbRepeat = new System.Windows.Forms.CheckBox();
-            this.LbArtiest = new System.Windows.Forms.Label();
-            this.LbSongName = new System.Windows.Forms.Label();
-            this.BtnPrev = new System.Windows.Forms.PictureBox();
-            this.BtnNext = new System.Windows.Forms.PictureBox();
-            this.BtnPlayStop = new System.Windows.Forms.PictureBox();
-            this.GbSidebar = new System.Windows.Forms.GroupBox();
-            this.BtnFriends = new System.Windows.Forms.Button();
-            this.FlpPlaylist = new System.Windows.Forms.FlowLayoutPanel();
-            this.LbPlaylist = new System.Windows.Forms.Label();
-            this.BtnCreatePlayList = new System.Windows.Forms.Button();
-            this.BtnSearch = new System.Windows.Forms.Button();
-            this.BtnHome = new System.Windows.Forms.Button();
-            this.GbMainSection = new System.Windows.Forms.GroupBox();
-            this.GbUnder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnPrev)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnNext)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnPlayStop)).BeginInit();
-            this.GbSidebar.SuspendLayout();
-            this.SuspendLayout();
+            GbUnder = new GroupBox();
+            CbRepeat = new CheckBox();
+            LbArtiest = new Label();
+            LbSongName = new Label();
+            BtnPrev = new PictureBox();
+            BtnNext = new PictureBox();
+            BtnPlayStop = new PictureBox();
+            GbSidebar = new GroupBox();
+            BtnFriends = new Button();
+            FlpPlaylist = new FlowLayoutPanel();
+            LbPlaylist = new Label();
+            BtnCreatePlayList = new Button();
+            BtnSearch = new Button();
+            BtnHome = new Button();
+            GbMainSection = new GroupBox();
+            GbUnder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) BtnPrev).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) BtnNext).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) BtnPlayStop).BeginInit();
+            GbSidebar.SuspendLayout();
+            SuspendLayout();
             // 
             // GbUnder
             // 
-            this.GbUnder.Controls.Add(this.CbRepeat);
-            this.GbUnder.Controls.Add(this.LbArtiest);
-            this.GbUnder.Controls.Add(this.LbSongName);
-            this.GbUnder.Controls.Add(this.BtnPrev);
-            this.GbUnder.Controls.Add(this.BtnNext);
-            this.GbUnder.Controls.Add(this.BtnPlayStop);
-            this.GbUnder.Location = new System.Drawing.Point(0, 449);
-            this.GbUnder.Name = "GbUnder";
-            this.GbUnder.Size = new System.Drawing.Size(954, 108);
-            this.GbUnder.TabIndex = 0;
-            this.GbUnder.TabStop = false;
+            GbUnder.Controls.Add(CbRepeat);
+            GbUnder.Controls.Add(LbArtiest);
+            GbUnder.Controls.Add(LbSongName);
+            GbUnder.Controls.Add(BtnPrev);
+            GbUnder.Controls.Add(BtnNext);
+            GbUnder.Controls.Add(BtnPlayStop);
+            GbUnder.Location = new Point(0, 449);
+            GbUnder.Name = "GbUnder";
+            GbUnder.Size = new Size(954, 108);
+            GbUnder.TabIndex = 0;
+            GbUnder.TabStop = false;
             // 
             // CbRepeat
             // 
-            this.CbRepeat.AutoSize = true;
-            this.CbRepeat.Location = new System.Drawing.Point(886, 28);
-            this.CbRepeat.Name = "CbRepeat";
-            this.CbRepeat.Size = new System.Drawing.Size(62, 19);
-            this.CbRepeat.TabIndex = 5;
-            this.CbRepeat.Text = "Repeat";
-            this.CbRepeat.UseVisualStyleBackColor = true;
-            this.CbRepeat.CheckedChanged += new System.EventHandler(this.CbRepeat_CheckedChanged);
+            CbRepeat.AutoSize = true;
+            CbRepeat.Location = new Point(886, 28);
+            CbRepeat.Name = "CbRepeat";
+            CbRepeat.Size = new Size(62, 19);
+            CbRepeat.TabIndex = 5;
+            CbRepeat.Text = "Repeat";
+            CbRepeat.UseVisualStyleBackColor = true;
+            CbRepeat.CheckedChanged += CbRepeat_CheckedChanged;
             // 
             // LbArtiest
             // 
-            this.LbArtiest.AutoSize = true;
-            this.LbArtiest.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LbArtiest.Location = new System.Drawing.Point(12, 62);
-            this.LbArtiest.Name = "LbArtiest";
-            this.LbArtiest.Size = new System.Drawing.Size(101, 21);
-            this.LbArtiest.TabIndex = 4;
-            this.LbArtiest.Text = "Artiest Name";
+            LbArtiest.AutoSize = true;
+            LbArtiest.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            LbArtiest.Location = new Point(12, 62);
+            LbArtiest.Name = "LbArtiest";
+            LbArtiest.Size = new Size(101, 21);
+            LbArtiest.TabIndex = 4;
+            LbArtiest.Text = "Artiest Name";
             // 
             // LbSongName
             // 
-            this.LbSongName.AutoEllipsis = true;
-            this.LbSongName.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LbSongName.Location = new System.Drawing.Point(12, 22);
-            this.LbSongName.Name = "LbSongName";
-            this.LbSongName.Size = new System.Drawing.Size(209, 30);
-            this.LbSongName.TabIndex = 3;
-            this.LbSongName.Text = "Song Name";
+            LbSongName.AutoEllipsis = true;
+            LbSongName.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            LbSongName.Location = new Point(12, 22);
+            LbSongName.Name = "LbSongName";
+            LbSongName.Size = new Size(209, 30);
+            LbSongName.TabIndex = 3;
+            LbSongName.Text = "Song Name";
             // 
             // BtnPrev
             // 
-            this.BtnPrev.Image = global::Spotify.Properties.Resource.previous;
-            this.BtnPrev.Location = new System.Drawing.Point(410, 28);
-            this.BtnPrev.Name = "BtnPrev";
-            this.BtnPrev.Size = new System.Drawing.Size(30, 23);
-            this.BtnPrev.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.BtnPrev.TabIndex = 2;
-            this.BtnPrev.TabStop = false;
+            BtnPrev.Image = Properties.Resource.previous;
+            BtnPrev.Location = new Point(410, 28);
+            BtnPrev.Name = "BtnPrev";
+            BtnPrev.Size = new Size(30, 23);
+            BtnPrev.SizeMode = PictureBoxSizeMode.Zoom;
+            BtnPrev.TabIndex = 2;
+            BtnPrev.TabStop = false;
             // 
             // BtnNext
             // 
-            this.BtnNext.Image = global::Spotify.Properties.Resource.next;
-            this.BtnNext.Location = new System.Drawing.Point(515, 28);
-            this.BtnNext.Name = "BtnNext";
-            this.BtnNext.Size = new System.Drawing.Size(30, 23);
-            this.BtnNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.BtnNext.TabIndex = 1;
-            this.BtnNext.TabStop = false;
+            BtnNext.Image = Properties.Resource.next;
+            BtnNext.Location = new Point(515, 28);
+            BtnNext.Name = "BtnNext";
+            BtnNext.Size = new Size(30, 23);
+            BtnNext.SizeMode = PictureBoxSizeMode.Zoom;
+            BtnNext.TabIndex = 1;
+            BtnNext.TabStop = false;
             // 
             // BtnPlayStop
             // 
-            this.BtnPlayStop.Image = global::Spotify.Properties.Resource.pause;
-            this.BtnPlayStop.Location = new System.Drawing.Point(455, 22);
-            this.BtnPlayStop.Name = "BtnPlayStop";
-            this.BtnPlayStop.Size = new System.Drawing.Size(43, 35);
-            this.BtnPlayStop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.BtnPlayStop.TabIndex = 0;
-            this.BtnPlayStop.TabStop = false;
-            this.BtnPlayStop.Click += new System.EventHandler(this.BtnPlayStop_Click);
+            BtnPlayStop.Image = Properties.Resource.pause;
+            BtnPlayStop.Location = new Point(455, 22);
+            BtnPlayStop.Name = "BtnPlayStop";
+            BtnPlayStop.Size = new Size(43, 35);
+            BtnPlayStop.SizeMode = PictureBoxSizeMode.Zoom;
+            BtnPlayStop.TabIndex = 0;
+            BtnPlayStop.TabStop = false;
+            BtnPlayStop.Click += BtnPlayStop_Click;
             // 
             // GbSidebar
             // 
-            this.GbSidebar.Controls.Add(this.BtnFriends);
-            this.GbSidebar.Controls.Add(this.FlpPlaylist);
-            this.GbSidebar.Controls.Add(this.LbPlaylist);
-            this.GbSidebar.Controls.Add(this.BtnCreatePlayList);
-            this.GbSidebar.Controls.Add(this.BtnSearch);
-            this.GbSidebar.Controls.Add(this.BtnHome);
-            this.GbSidebar.Location = new System.Drawing.Point(0, -8);
-            this.GbSidebar.Name = "GbSidebar";
-            this.GbSidebar.Size = new System.Drawing.Size(163, 466);
-            this.GbSidebar.TabIndex = 1;
-            this.GbSidebar.TabStop = false;
+            GbSidebar.Controls.Add(BtnFriends);
+            GbSidebar.Controls.Add(FlpPlaylist);
+            GbSidebar.Controls.Add(LbPlaylist);
+            GbSidebar.Controls.Add(BtnCreatePlayList);
+            GbSidebar.Controls.Add(BtnSearch);
+            GbSidebar.Controls.Add(BtnHome);
+            GbSidebar.Location = new Point(0, -8);
+            GbSidebar.Name = "GbSidebar";
+            GbSidebar.Size = new Size(163, 466);
+            GbSidebar.TabIndex = 1;
+            GbSidebar.TabStop = false;
             // 
             // BtnFriends
             // 
-            this.BtnFriends.Location = new System.Drawing.Point(6, 98);
-            this.BtnFriends.Name = "BtnFriends";
-            this.BtnFriends.Size = new System.Drawing.Size(145, 33);
-            this.BtnFriends.TabIndex = 5;
-            this.BtnFriends.Text = "Friends";
-            this.BtnFriends.UseVisualStyleBackColor = true;
+            BtnFriends.Location = new Point(6, 98);
+            BtnFriends.Name = "BtnFriends";
+            BtnFriends.Size = new Size(145, 33);
+            BtnFriends.TabIndex = 5;
+            BtnFriends.Text = "Friends";
+            BtnFriends.UseVisualStyleBackColor = true;
+            BtnFriends.Click += BtnFriends_Click;
             // 
             // FlpPlaylist
             // 
-            this.FlpPlaylist.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.FlpPlaylist.Location = new System.Drawing.Point(0, 203);
-            this.FlpPlaylist.Name = "FlpPlaylist";
-            this.FlpPlaylist.Size = new System.Drawing.Size(157, 260);
-            this.FlpPlaylist.TabIndex = 4;
+            FlpPlaylist.BackgroundImageLayout = ImageLayout.None;
+            FlpPlaylist.Location = new Point(0, 203);
+            FlpPlaylist.Name = "FlpPlaylist";
+            FlpPlaylist.Size = new Size(157, 260);
+            FlpPlaylist.TabIndex = 4;
             // 
             // LbPlaylist
             // 
-            this.LbPlaylist.AutoSize = true;
-            this.LbPlaylist.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LbPlaylist.Location = new System.Drawing.Point(40, 172);
-            this.LbPlaylist.Name = "LbPlaylist";
-            this.LbPlaylist.Size = new System.Drawing.Size(73, 28);
-            this.LbPlaylist.TabIndex = 3;
-            this.LbPlaylist.Text = "Playlist";
+            LbPlaylist.AutoSize = true;
+            LbPlaylist.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            LbPlaylist.Location = new Point(40, 172);
+            LbPlaylist.Name = "LbPlaylist";
+            LbPlaylist.Size = new Size(73, 28);
+            LbPlaylist.TabIndex = 3;
+            LbPlaylist.Text = "Playlist";
             // 
             // BtnCreatePlayList
             // 
-            this.BtnCreatePlayList.Location = new System.Drawing.Point(6, 136);
-            this.BtnCreatePlayList.Name = "BtnCreatePlayList";
-            this.BtnCreatePlayList.Size = new System.Drawing.Size(145, 33);
-            this.BtnCreatePlayList.TabIndex = 2;
-            this.BtnCreatePlayList.Text = "Create Playlist";
-            this.BtnCreatePlayList.UseVisualStyleBackColor = true;
-            this.BtnCreatePlayList.Click += new System.EventHandler(this.BtnCreatePlayList_Click);
+            BtnCreatePlayList.Location = new Point(6, 136);
+            BtnCreatePlayList.Name = "BtnCreatePlayList";
+            BtnCreatePlayList.Size = new Size(145, 33);
+            BtnCreatePlayList.TabIndex = 2;
+            BtnCreatePlayList.Text = "Create Playlist";
+            BtnCreatePlayList.UseVisualStyleBackColor = true;
+            BtnCreatePlayList.Click += BtnCreatePlayList_Click;
             // 
             // BtnSearch
             // 
-            this.BtnSearch.Location = new System.Drawing.Point(6, 59);
-            this.BtnSearch.Name = "BtnSearch";
-            this.BtnSearch.Size = new System.Drawing.Size(145, 33);
-            this.BtnSearch.TabIndex = 1;
-            this.BtnSearch.Text = "Search";
-            this.BtnSearch.UseVisualStyleBackColor = true;
-            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            BtnSearch.Location = new Point(6, 59);
+            BtnSearch.Name = "BtnSearch";
+            BtnSearch.Size = new Size(145, 33);
+            BtnSearch.TabIndex = 1;
+            BtnSearch.Text = "Search";
+            BtnSearch.UseVisualStyleBackColor = true;
+            BtnSearch.Click += BtnSearch_Click;
             // 
             // BtnHome
             // 
-            this.BtnHome.Location = new System.Drawing.Point(6, 20);
-            this.BtnHome.Name = "BtnHome";
-            this.BtnHome.Size = new System.Drawing.Size(145, 33);
-            this.BtnHome.TabIndex = 0;
-            this.BtnHome.Text = "Home";
-            this.BtnHome.UseVisualStyleBackColor = true;
-            this.BtnHome.Click += new System.EventHandler(this.BtnHome_Click);
+            BtnHome.Location = new Point(6, 20);
+            BtnHome.Name = "BtnHome";
+            BtnHome.Size = new Size(145, 33);
+            BtnHome.TabIndex = 0;
+            BtnHome.Text = "Home";
+            BtnHome.UseVisualStyleBackColor = true;
+            BtnHome.Click += BtnHome_Click;
             // 
             // GbMainSection
             // 
-            this.GbMainSection.Location = new System.Drawing.Point(163, -8);
-            this.GbMainSection.Name = "GbMainSection";
-            this.GbMainSection.Size = new System.Drawing.Size(791, 465);
-            this.GbMainSection.TabIndex = 2;
-            this.GbMainSection.TabStop = false;
+            GbMainSection.Location = new Point(163, -8);
+            GbMainSection.Name = "GbMainSection";
+            GbMainSection.Size = new Size(791, 465);
+            GbMainSection.TabIndex = 2;
+            GbMainSection.TabStop = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 555);
-            this.Controls.Add(this.GbMainSection);
-            this.Controls.Add(this.GbSidebar);
-            this.Controls.Add(this.GbUnder);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(967, 594);
-            this.MinimumSize = new System.Drawing.Size(967, 594);
-            this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Spotify";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.Shown += new System.EventHandler(this.Form1_Shown);
-            this.GbUnder.ResumeLayout(false);
-            this.GbUnder.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnPrev)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnNext)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnPlayStop)).EndInit();
-            this.GbSidebar.ResumeLayout(false);
-            this.GbSidebar.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(951, 555);
+            Controls.Add(GbMainSection);
+            Controls.Add(GbSidebar);
+            Controls.Add(GbUnder);
+            Icon = (Icon) resources.GetObject("$this.Icon");
+            MaximumSize = new Size(967, 594);
+            MinimumSize = new Size(967, 594);
+            Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Spotify";
+            Load += Form1_Load;
+            Shown += Form1_Shown;
+            GbUnder.ResumeLayout(false);
+            GbUnder.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize) BtnPrev).EndInit();
+            ((System.ComponentModel.ISupportInitialize) BtnNext).EndInit();
+            ((System.ComponentModel.ISupportInitialize) BtnPlayStop).EndInit();
+            GbSidebar.ResumeLayout(false);
+            GbSidebar.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

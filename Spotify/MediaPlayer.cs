@@ -11,8 +11,6 @@ namespace Spotify {
 
         private static readonly HttpClient client = new HttpClient();
 
-        private static MemoryStream currentStream;
-
         private static WaveOut waveOut;
 
         private static bool playing = false;
@@ -35,9 +33,9 @@ namespace Spotify {
             waveOut.Init(blockAlignedStream);
 
             do {
-                waveOut.Play();
-
                 playing = true;
+
+                waveOut.Play();
 
                 while (waveOut.PlaybackState == PlaybackState.Playing || waveOut.PlaybackState == PlaybackState.Paused) {
                     System.Threading.Thread.Sleep(100);
