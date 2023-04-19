@@ -24,104 +24,105 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginSignUpForm));
-            LbLoginSignUp = new Label();
-            RbLogin = new RadioButton();
-            RbSignUp = new RadioButton();
-            TbAccountName = new TextBox();
-            TbPassword = new TextBox();
-            BtnLoginSignUp = new Button();
-            panel1 = new Panel();
-            panel1.SuspendLayout();
-            SuspendLayout();
+            this.LbLoginSignUp = new System.Windows.Forms.Label();
+            this.RbLogin = new System.Windows.Forms.RadioButton();
+            this.RbSignUp = new System.Windows.Forms.RadioButton();
+            this.TbAccountName = new System.Windows.Forms.TextBox();
+            this.TbPassword = new System.Windows.Forms.TextBox();
+            this.BtnLoginSignUp = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // LbLoginSignUp
             // 
-            LbLoginSignUp.AutoSize = true;
-            LbLoginSignUp.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            LbLoginSignUp.Location = new Point(113, 3);
-            LbLoginSignUp.Name = "LbLoginSignUp";
-            LbLoginSignUp.Size = new Size(157, 30);
-            LbLoginSignUp.TabIndex = 0;
-            LbLoginSignUp.Text = "Login / SignUp";
+            this.LbLoginSignUp.AutoSize = true;
+            this.LbLoginSignUp.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LbLoginSignUp.Location = new System.Drawing.Point(113, 3);
+            this.LbLoginSignUp.Name = "LbLoginSignUp";
+            this.LbLoginSignUp.Size = new System.Drawing.Size(157, 30);
+            this.LbLoginSignUp.TabIndex = 0;
+            this.LbLoginSignUp.Text = "Login / SignUp";
             // 
             // RbLogin
             // 
-            RbLogin.AutoSize = true;
-            RbLogin.Checked = true;
-            RbLogin.Location = new Point(15, 3);
-            RbLogin.Name = "RbLogin";
-            RbLogin.Size = new Size(55, 19);
-            RbLogin.TabIndex = 1;
-            RbLogin.TabStop = true;
-            RbLogin.Text = "Login";
-            RbLogin.UseVisualStyleBackColor = true;
-            RbLogin.CheckedChanged += RbLogin_CheckedChanged;
+            this.RbLogin.AutoSize = true;
+            this.RbLogin.Checked = true;
+            this.RbLogin.Location = new System.Drawing.Point(15, 3);
+            this.RbLogin.Name = "RbLogin";
+            this.RbLogin.Size = new System.Drawing.Size(55, 19);
+            this.RbLogin.TabIndex = 1;
+            this.RbLogin.TabStop = true;
+            this.RbLogin.Text = "Login";
+            this.RbLogin.UseVisualStyleBackColor = true;
+            this.RbLogin.CheckedChanged += new System.EventHandler(this.RbLogin_CheckedChanged);
             // 
             // RbSignUp
             // 
-            RbSignUp.AutoSize = true;
-            RbSignUp.Location = new Point(76, 3);
-            RbSignUp.Name = "RbSignUp";
-            RbSignUp.Size = new Size(63, 19);
-            RbSignUp.TabIndex = 2;
-            RbSignUp.Text = "SignUp";
-            RbSignUp.UseVisualStyleBackColor = true;
-            RbSignUp.CheckedChanged += RbSignUp_CheckedChanged;
+            this.RbSignUp.AutoSize = true;
+            this.RbSignUp.Location = new System.Drawing.Point(76, 3);
+            this.RbSignUp.Name = "RbSignUp";
+            this.RbSignUp.Size = new System.Drawing.Size(63, 19);
+            this.RbSignUp.TabIndex = 2;
+            this.RbSignUp.Text = "SignUp";
+            this.RbSignUp.UseVisualStyleBackColor = true;
+            this.RbSignUp.CheckedChanged += new System.EventHandler(this.RbSignUp_CheckedChanged);
             // 
             // TbAccountName
             // 
-            TbAccountName.Location = new Point(113, 61);
-            TbAccountName.Name = "TbAccountName";
-            TbAccountName.PlaceholderText = "Account Name";
-            TbAccountName.Size = new Size(157, 23);
-            TbAccountName.TabIndex = 3;
+            this.TbAccountName.Location = new System.Drawing.Point(113, 61);
+            this.TbAccountName.Name = "TbAccountName";
+            this.TbAccountName.PlaceholderText = "Account Name";
+            this.TbAccountName.Size = new System.Drawing.Size(157, 23);
+            this.TbAccountName.TabIndex = 3;
             // 
             // TbPassword
             // 
-            TbPassword.Location = new Point(113, 90);
-            TbPassword.Name = "TbPassword";
-            TbPassword.PlaceholderText = "Password";
-            TbPassword.Size = new Size(157, 23);
-            TbPassword.TabIndex = 4;
+            this.TbPassword.Location = new System.Drawing.Point(113, 90);
+            this.TbPassword.Name = "TbPassword";
+            this.TbPassword.PlaceholderText = "Password";
+            this.TbPassword.Size = new System.Drawing.Size(157, 23);
+            this.TbPassword.TabIndex = 4;
             // 
             // BtnLoginSignUp
             // 
-            BtnLoginSignUp.Location = new Point(113, 119);
-            BtnLoginSignUp.Name = "BtnLoginSignUp";
-            BtnLoginSignUp.Size = new Size(157, 23);
-            BtnLoginSignUp.TabIndex = 5;
-            BtnLoginSignUp.Text = "Login";
-            BtnLoginSignUp.UseVisualStyleBackColor = true;
+            this.BtnLoginSignUp.Location = new System.Drawing.Point(113, 119);
+            this.BtnLoginSignUp.Name = "BtnLoginSignUp";
+            this.BtnLoginSignUp.Size = new System.Drawing.Size(157, 23);
+            this.BtnLoginSignUp.TabIndex = 5;
+            this.BtnLoginSignUp.Text = "Login";
+            this.BtnLoginSignUp.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
-            panel1.Controls.Add(RbLogin);
-            panel1.Controls.Add(RbSignUp);
-            panel1.Location = new Point(113, 36);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(157, 25);
-            panel1.TabIndex = 6;
+            this.panel1.Controls.Add(this.RbLogin);
+            this.panel1.Controls.Add(this.RbSignUp);
+            this.panel1.Location = new System.Drawing.Point(113, 36);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(157, 25);
+            this.panel1.TabIndex = 6;
             // 
             // LoginSignUpForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(385, 160);
-            Controls.Add(panel1);
-            Controls.Add(BtnLoginSignUp);
-            Controls.Add(TbPassword);
-            Controls.Add(TbAccountName);
-            Controls.Add(LbLoginSignUp);
-            Icon = (Icon) resources.GetObject("$this.Icon");
-            MaximumSize = new Size(401, 199);
-            MinimumSize = new Size(401, 199);
-            Name = "LoginSignUpForm";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Login / SignUp";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(385, 160);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.BtnLoginSignUp);
+            this.Controls.Add(this.TbPassword);
+            this.Controls.Add(this.TbAccountName);
+            this.Controls.Add(this.LbLoginSignUp);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(401, 199);
+            this.MinimumSize = new System.Drawing.Size(401, 199);
+            this.Name = "LoginSignUpForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Login / SignUp";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

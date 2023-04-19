@@ -6,6 +6,7 @@ using Spotify.sql;
 using Spotify.util.afspeellijsten;
 using Spotify.util.opnamens;
 using System.Data.SqlTypes;
+using System.Security.Policy;
 using System.Windows.Forms;
 
 namespace Spotify {
@@ -32,6 +33,9 @@ namespace Spotify {
             addSongs();
             GbMainSection.Controls.Add(new HomeView());
 
+            MediaPlayer.lbArtiest = LbArtiest;
+            MediaPlayer.lbSongName = LbSongName;
+
             FlpPlaylist.HorizontalScroll.Maximum = 0;
             FlpPlaylist.AutoScroll = false;
             FlpPlaylist.VerticalScroll.Visible = false;
@@ -51,14 +55,6 @@ namespace Spotify {
                 MediaPlayer.resume();
                 playingSong = false;
             }
-
-        }
-
-        private void BtnNext_Click(Object sender, EventArgs e) {
-
-        }
-
-        private void BtnPrev_Click(Object sender, EventArgs e) {
 
         }
 
@@ -130,5 +126,9 @@ namespace Spotify {
                 repeat = false;
         }
 
+        public void setLabels(string name, string artiest) {
+            LbSongName.Text = name;
+            LbArtiest.Text = artiest;
+        }
     }
 }

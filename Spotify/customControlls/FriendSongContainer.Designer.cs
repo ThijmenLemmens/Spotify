@@ -23,79 +23,79 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            PbPlay = new PictureBox();
-            LbSongName = new Label();
-            LbAddSongTo = new Label();
-            LbArtiestName = new Label();
-            CbPlaylist = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize) PbPlay).BeginInit();
-            SuspendLayout();
+            this.PbPlay = new System.Windows.Forms.PictureBox();
+            this.LbSongName = new System.Windows.Forms.Label();
+            this.LbAddSongTo = new System.Windows.Forms.Label();
+            this.LbArtiestName = new System.Windows.Forms.Label();
+            this.CbPlaylist = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PbPlay)).BeginInit();
+            this.SuspendLayout();
             // 
             // PbPlay
             // 
-            PbPlay.Image = Properties.Resource.play_buttton;
-            PbPlay.InitialImage = null;
-            PbPlay.Location = new Point(3, 3);
-            PbPlay.Name = "PbPlay";
-            PbPlay.Size = new Size(31, 27);
-            PbPlay.SizeMode = PictureBoxSizeMode.Zoom;
-            PbPlay.TabIndex = 0;
-            PbPlay.TabStop = false;
-            PbPlay.Click += PbPlay_Click;
+            this.PbPlay.Image = global::Spotify.Properties.Resource.play_buttton;
+            this.PbPlay.InitialImage = null;
+            this.PbPlay.Location = new System.Drawing.Point(3, 3);
+            this.PbPlay.Name = "PbPlay";
+            this.PbPlay.Size = new System.Drawing.Size(31, 27);
+            this.PbPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PbPlay.TabIndex = 0;
+            this.PbPlay.TabStop = false;
+            this.PbPlay.Click += new System.EventHandler(this.PbPlay_Click);
             // 
             // LbSongName
             // 
-            LbSongName.AutoSize = true;
-            LbSongName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            LbSongName.Location = new Point(45, -1);
-            LbSongName.Name = "LbSongName";
-            LbSongName.Size = new Size(92, 21);
-            LbSongName.TabIndex = 1;
-            LbSongName.Text = "Song Name";
+            this.LbSongName.AutoSize = true;
+            this.LbSongName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LbSongName.Location = new System.Drawing.Point(45, -1);
+            this.LbSongName.Name = "LbSongName";
+            this.LbSongName.Size = new System.Drawing.Size(92, 21);
+            this.LbSongName.TabIndex = 1;
+            this.LbSongName.Text = "Song Name";
             // 
             // LbAddSongTo
             // 
-            LbAddSongTo.AutoSize = true;
-            LbAddSongTo.Location = new Point(237, 9);
-            LbAddSongTo.Name = "LbAddSongTo";
-            LbAddSongTo.Size = new Size(72, 15);
-            LbAddSongTo.TabIndex = 2;
-            LbAddSongTo.Text = "Add song to";
+            this.LbAddSongTo.AutoSize = true;
+            this.LbAddSongTo.Location = new System.Drawing.Point(237, 9);
+            this.LbAddSongTo.Name = "LbAddSongTo";
+            this.LbAddSongTo.Size = new System.Drawing.Size(72, 15);
+            this.LbAddSongTo.TabIndex = 2;
+            this.LbAddSongTo.Text = "Add song to";
             // 
             // LbArtiestName
             // 
-            LbArtiestName.AutoSize = true;
-            LbArtiestName.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            LbArtiestName.Location = new Point(45, 20);
-            LbArtiestName.Name = "LbArtiestName";
-            LbArtiestName.Size = new Size(69, 13);
-            LbArtiestName.TabIndex = 3;
-            LbArtiestName.Text = "ArtiestName";
+            this.LbArtiestName.AutoSize = true;
+            this.LbArtiestName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LbArtiestName.Location = new System.Drawing.Point(45, 20);
+            this.LbArtiestName.Name = "LbArtiestName";
+            this.LbArtiestName.Size = new System.Drawing.Size(69, 13);
+            this.LbArtiestName.TabIndex = 3;
+            this.LbArtiestName.Text = "ArtiestName";
             // 
             // CbPlaylist
             // 
-            CbPlaylist.DropDownStyle = ComboBoxStyle.DropDownList;
-            CbPlaylist.FormattingEnabled = true;
-            CbPlaylist.Location = new Point(312, 5);
-            CbPlaylist.Name = "CbPlaylist";
-            CbPlaylist.Size = new Size(121, 23);
-            CbPlaylist.TabIndex = 4;
-            CbPlaylist.SelectedIndexChanged += CbPlaylist_SelectedIndexChanged;
+            this.CbPlaylist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbPlaylist.FormattingEnabled = true;
+            this.CbPlaylist.Location = new System.Drawing.Point(312, 5);
+            this.CbPlaylist.Name = "CbPlaylist";
+            this.CbPlaylist.Size = new System.Drawing.Size(121, 23);
+            this.CbPlaylist.TabIndex = 4;
             // 
             // FriendSongContainer
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(CbPlaylist);
-            Controls.Add(LbArtiestName);
-            Controls.Add(LbAddSongTo);
-            Controls.Add(LbSongName);
-            Controls.Add(PbPlay);
-            Name = "FriendSongContainer";
-            Size = new Size(473, 33);
-            ((System.ComponentModel.ISupportInitialize) PbPlay).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.CbPlaylist);
+            this.Controls.Add(this.LbArtiestName);
+            this.Controls.Add(this.LbAddSongTo);
+            this.Controls.Add(this.LbSongName);
+            this.Controls.Add(this.PbPlay);
+            this.Name = "FriendSongContainer";
+            this.Size = new System.Drawing.Size(473, 33);
+            ((System.ComponentModel.ISupportInitialize)(this.PbPlay)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

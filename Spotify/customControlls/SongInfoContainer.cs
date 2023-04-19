@@ -35,7 +35,8 @@ namespace Spotify.customControlls {
         }
 
         private void PbPlay_Click(Object sender, EventArgs e) {
-            Task.Run(() => MediaPlayer.play(opnamen.url));
+            Program.form1.setLabels(opnamen.name, Util.setOwners(opnamen));
+            Task.Run(() => MediaPlayer.play(opnamen));
         }
 
         private void CbPlaylist_SelectedIndexChanged(Object sender, EventArgs e) {

@@ -70,5 +70,8 @@ namespace Spotify.customControlls {
 
         }
 
+        private void PlaylistView_Load_1(Object sender, EventArgs e) {
+
+        }
     }
 }

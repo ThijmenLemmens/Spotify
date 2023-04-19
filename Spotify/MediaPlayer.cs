@@ -1,4 +1,5 @@
 ﻿using NAudio.Wave;
+using Spotify.util.opnamens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,12 +15,22 @@ namespace Spotify {
         private static WaveOut waveOut;
 
         private static bool playing = false;
+        
+        public static Label lbSongName {
+            private get; set;
+        }
 
-        public static void play(string url) {
-            if (playing)
-                return;
+        public static Label lbArtiest {
+            private get; set;
+        }
 
-            byte[] stream = client.GetByteArrayAsync(url).Result;
+        public static void play(Opnamen opnamen) {
+            if (playing) {
+                waveOut.Stop();
+                playing = false;
+            }
+
+            byte[] stream = client.GetByteArrayAsync(opnamen.url).Result;
 
             MemoryStream memoryStream = new(stream);
 
@@ -58,10 +69,6 @@ namespace Spotify {
         public static void pause() {
             if (playing)
                 waveOut.Pause();
-        }
-
-        public static void repeat() {
-        
         }
     }
 }

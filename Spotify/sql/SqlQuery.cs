@@ -73,7 +73,6 @@ namespace Spotify.sql {
             }
 
             return accounts;
-
         }
 
         public static List<Playlist> getPlayList(Account account) {

@@ -49,6 +49,8 @@ namespace Spotify {
 
             Form1 form = new(account);
 
+            Program.form1 = form;
+
             Thread myThread = new((ThreadStart) delegate {
                 Application.Run(form);
             });
