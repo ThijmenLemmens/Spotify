@@ -37,6 +37,11 @@ namespace Spotify.customControlls {
             addSongToContainer();
         }
 
+        /// <summary>
+        /// delets a playlist and updates the Database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnDelete_Click(Object sender, EventArgs e) {
             playlist.owners.Remove(Form1.account);
 
@@ -67,10 +72,6 @@ namespace Spotify.customControlls {
         }
 
         private void LbPlaylistName_Click(Object sender, EventArgs e) {
-
-        }
-
-        private void PlaylistView_Load_1(Object sender, EventArgs e) {
 
         }
     }

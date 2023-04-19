@@ -16,11 +16,13 @@ namespace Spotify {
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
+            // sets the Database class properties
             Database.Instance().server = "Localhost";
             Database.Instance().databaseName = "spotify";
             Database.Instance().userName = "root";
             Database.Instance().password = "";
 
+            // makes a connection to the Database
             Database.Instance().IsConnect();
 
             Application.Run(new LoginSignUpForm());

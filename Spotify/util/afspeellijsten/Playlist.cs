@@ -26,11 +26,5 @@ namespace Spotify.util.afspeellijsten {
                 items[count] = value;
             }
         }
-
-        public override Boolean Equals(Object? obj) {
-            return obj is Playlist playlist &&
-                   Name == playlist.Name;
-        }
-        
     }
 }

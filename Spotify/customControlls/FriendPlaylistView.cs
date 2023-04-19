@@ -33,7 +33,7 @@ namespace Spotify.customControlls {
         }
 
         private void BtnCompare_Click(Object sender, EventArgs e) {
-            
+
         }
 
         private void loadPlaylist() {

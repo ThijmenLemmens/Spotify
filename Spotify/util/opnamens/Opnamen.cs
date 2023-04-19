@@ -17,6 +17,9 @@ namespace Spotify.util.opnamens {
             get; set; 
         }
 
+        /// <summary>
+        /// url for the htpp request
+        /// </summary>
         public string url {
             get; set; 
         }
@@ -25,6 +28,11 @@ namespace Spotify.util.opnamens {
             creator = new();
         }
 
+        /// <summary>
+        /// overrides the normal Equals method for better control
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override Boolean Equals(Object? obj) {
             return obj is Opnamen opnamen &&
                    id == opnamen.id;

@@ -15,14 +15,6 @@ namespace Spotify {
         private static WaveOut waveOut;
 
         private static bool playing = false;
-        
-        public static Label lbSongName {
-            private get; set;
-        }
-
-        public static Label lbArtiest {
-            private get; set;
-        }
 
         public static void play(Opnamen opnamen) {
             if (playing) {
@@ -30,10 +22,12 @@ namespace Spotify {
                 playing = false;
             }
 
+            // gets the stream for a http request
             byte[] stream = client.GetByteArrayAsync(opnamen.url).Result;
 
             MemoryStream memoryStream = new(stream);
 
+            // makes it possible to play form a stream
             using WaveStream blockAlignedStream =
                 new BlockAlignReductionStream(
                     WaveFormatConversionStream.CreatePcmStream(
@@ -55,17 +49,24 @@ namespace Spotify {
                 memoryStream.Position = 0;
             } while (Form1.repeat);
 
+            // dispose resources 
             waveOut.Dispose();
             memoryStream.Dispose();
 
             playing = false;
         }
 
+        /// <summary>
+        /// resumes the song
+        /// </summary>
         public static void resume() {
             if (playing)
                 waveOut.Play();
         }
 
+        /// <summary>
+        /// pauses the song
+        /// </summary>
         public static void pause() {
             if (playing)
                 waveOut.Pause();

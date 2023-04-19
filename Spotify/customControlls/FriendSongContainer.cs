@@ -31,6 +31,11 @@ namespace Spotify.customControlls {
             });
         }
 
+        /// <summary>
+        /// plays a song 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PbPlay_Click(Object sender, EventArgs e) {
             Program.form1.setLabels(opnamen.name, Util.setOwners(opnamen));
             Task.Run(() => MediaPlayer.play(opnamen));

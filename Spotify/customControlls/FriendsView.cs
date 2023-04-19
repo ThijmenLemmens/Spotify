@@ -28,6 +28,11 @@ namespace Spotify.customControlls {
 
         }
 
+        /// <summary>
+        /// adds a friend to your friend list and updates the Database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAddFriend_Click(Object sender, EventArgs e) {
 
             Account? friend = SqlQuery.selectAccount(TbFriendName.Text);
@@ -58,6 +63,9 @@ namespace Spotify.customControlls {
             loadFriends();
         }
 
+        /// <summary>
+        /// shows all the frieds the currently logged in accaount has
+        /// </summary>
         private void loadFriends() {
             for (int i = 0; i < account.friends.Count; i++)
                 FlpFriends.Controls.Add(new FriendLabel(account.friends[i], GbFriendMainSection));

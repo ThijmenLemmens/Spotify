@@ -30,18 +30,28 @@ namespace Spotify.customControlls {
             fillLayoutOpnamen();
         }
 
+        /// <summary>
+        /// fills the layout with songs
+        /// </summary>
         private void fillLayoutOpnamen() {
             opnamens.ForEach(opnamen => {
                 FlpSearch.Controls.Add(new SongInfoContainer(opnamen));
             });
         }
 
+        /// <summary>
+        /// fills the layout with albums
+        /// </summary>
         private void fillLayoutAlbum() {
             albums.ForEach(album => {
                 FlpSearch.Controls.Add(new AlbumInfo(album, GbMain));
             });
         }
 
+        /// <summary>
+        /// gets every song
+        /// </summary>
+        /// <returns></returns>
         private List<Opnamen> GetOpnamens() {
             List<Opnamen> opnamens = new();
 
@@ -63,6 +73,10 @@ namespace Spotify.customControlls {
             return opnamens;
         }
 
+        /// <summary>
+        /// get all albums
+        /// </summary>
+        /// <returns></returns>
         private List<Album> getAlbums() {
             List<Album> albums = new();
 
@@ -97,6 +111,11 @@ namespace Spotify.customControlls {
             return albums;
         }
 
+        /// <summary>
+        /// look wich thing is selected and loads the right thing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CbCats_SelectedIndexChanged(Object sender, EventArgs e) {
             FlpSearch.Controls.Clear();
 

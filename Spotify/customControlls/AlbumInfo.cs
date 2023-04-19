@@ -25,6 +25,9 @@ namespace Spotify.customControlls {
             GbMain.Controls.Add(new AlbumView(album));
         }
 
+        /// <summary>
+        /// returns a string with the owners names 
+        /// </summary>
         private void setOwners() {
             StringBuilder builder = new();
 

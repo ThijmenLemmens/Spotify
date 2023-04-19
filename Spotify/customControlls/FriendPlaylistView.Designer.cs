@@ -27,9 +27,9 @@
             LbOwned = new Label();
             LbOwners = new Label();
             FlpPlaylist = new FlowLayoutPanel();
-            BtnCompare = new Button();
             CbShuffle = new CheckBox();
             CbCompare = new ComboBox();
+            LbCompare = new Label();
             SuspendLayout();
             // 
             // LbPlaylistName
@@ -67,16 +67,6 @@
             FlpPlaylist.Size = new Size(446, 225);
             FlpPlaylist.TabIndex = 3;
             // 
-            // BtnCompare
-            // 
-            BtnCompare.Location = new Point(83, 71);
-            BtnCompare.Name = "BtnCompare";
-            BtnCompare.Size = new Size(75, 23);
-            BtnCompare.TabIndex = 4;
-            BtnCompare.Text = "Compare";
-            BtnCompare.UseVisualStyleBackColor = true;
-            BtnCompare.Click += BtnCompare_Click;
-            // 
             // CbShuffle
             // 
             CbShuffle.AutoSize = true;
@@ -91,20 +81,29 @@
             // 
             CbCompare.DropDownStyle = ComboBoxStyle.DropDownList;
             CbCompare.FormattingEnabled = true;
-            CbCompare.Location = new Point(173, 72);
+            CbCompare.Location = new Point(145, 72);
             CbCompare.Name = "CbCompare";
             CbCompare.Size = new Size(121, 23);
             CbCompare.TabIndex = 6;
             CbCompare.SelectedIndexChanged += CbCompare_SelectedIndexChanged;
+            // 
+            // LbCompare
+            // 
+            LbCompare.AutoSize = true;
+            LbCompare.Location = new Point(83, 75);
+            LbCompare.Name = "LbCompare";
+            LbCompare.Size = new Size(56, 15);
+            LbCompare.TabIndex = 7;
+            LbCompare.Text = "Compare";
             // 
             // FriendPlaylistView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(LbCompare);
             Controls.Add(CbCompare);
             Controls.Add(CbShuffle);
-            Controls.Add(BtnCompare);
             Controls.Add(FlpPlaylist);
             Controls.Add(LbOwners);
             Controls.Add(LbOwned);
@@ -121,8 +120,8 @@
         private Label LbOwned;
         private Label LbOwners;
         private FlowLayoutPanel FlpPlaylist;
-        private Button BtnCompare;
         private CheckBox CbShuffle;
         private ComboBox CbCompare;
+        private Label LbCompare;
     }
 }

@@ -15,8 +15,16 @@ namespace Spotify.sql {
 
     public class SqlQuery {
 
+        /// <summary>
+        /// gets the connection to the Database
+        /// </summary>
         private static MySqlConnection con = Database.Instance().Connection;
 
+        /// <summary>
+        /// gets record account from the Database where user_name = a given name
+        /// </summary>
+        /// <param name="accountName"></param>
+        /// <returns></returns>
         public static Account? selectAccount(string accountName) {
             Account? account = null;
 
@@ -42,6 +50,11 @@ namespace Spotify.sql {
             return account;
         }
 
+        /// <summary>
+        /// returns a list for friends (accounts) from the currently logged in account 
+        /// </summary>
+        /// <param name="account"></param>
+        /// <returns></returns>
         public static List<Account> getFriends(Account account) {
 
             List<Account> accounts = new();
@@ -75,6 +88,11 @@ namespace Spotify.sql {
             return accounts;
         }
 
+        /// <summary>
+        /// returns a list of playlits from the currently logged in account
+        /// </summary>
+        /// <param name="account"></param>
+        /// <returns></returns>
         public static List<Playlist> getPlayList(Account account) {
             Form1.playlists.Clear();
 
@@ -106,6 +124,10 @@ namespace Spotify.sql {
             return playlists;
         }
 
+        /// <summary>
+        /// fills the playlists with the correct songs
+        /// </summary>
+        /// <param name="playlist"></param>
         public static void getAllSongs(Playlist playlist) {
 
             List<Int32> songIds = new();
@@ -133,6 +155,10 @@ namespace Spotify.sql {
             }
         }
 
+        /// <summary>
+        /// fills the friend accounts with songs and playlists
+        /// </summary>
+        /// <param name="account"></param>
         public static void getAllFriends(Account account) {
             List<Account> accounts = getFriends(account);
 
@@ -150,6 +176,12 @@ namespace Spotify.sql {
             account.friends = accounts;
         }
 
+        /// <summary>
+        /// adds the song to a playlist and updates the record
+        /// </summary>
+        /// <param name="playlists"></param>
+        /// <param name="index"></param>
+        /// <param name="opnamen"></param>
         public static void addSongToPlaylist(List<Playlist> playlists, int index, Opnamen opnamen) {
             playlists[index].items.Add(opnamen);
 

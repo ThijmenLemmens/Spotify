@@ -51,6 +51,7 @@ namespace Spotify {
 
             Program.form1 = form;
 
+            // starts a thread for the next form 
             Thread myThread = new((ThreadStart) delegate {
                 Application.Run(form);
             });
@@ -79,6 +80,9 @@ namespace Spotify {
             reset();
         }
 
+        /// <summary>
+        /// resets the textboxes 
+        /// </summary>
         private void reset() {
             RbLogin.Checked = true;
             TbAccountName.Text = "";

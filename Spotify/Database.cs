@@ -40,6 +40,10 @@ namespace Spotify {
             return _instance;
         }
 
+        /// <summary>
+        /// connect to app to the Database
+        /// </summary>
+        /// <returns></returns>
         public bool IsConnect() {
             if (Connection == null) {
                 if (string.IsNullOrEmpty(databaseName))

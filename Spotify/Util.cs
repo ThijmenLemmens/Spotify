@@ -9,6 +9,11 @@ using System.Threading.Tasks;
 namespace Spotify {
     public class Util {
 
+        /// <summary>
+        /// returns a string that has te owners names of the opnamen.
+        /// </summary>
+        /// <param name="opnamen"></param>
+        /// <returns></returns>
         public static string setOwners(Opnamen opnamen) {
             StringBuilder builder = new();
 
@@ -24,6 +29,11 @@ namespace Spotify {
             return builder.ToString();
         }
 
+        /// <summary>
+        /// returns a string that has te owners names of the playlist.
+        /// </summary>
+        /// <param name="playlist"></param>
+        /// <returns></returns>
         public static string setOwners(Playlist playlist) {
             StringBuilder builder = new();
 
@@ -39,6 +49,12 @@ namespace Spotify {
             return builder.ToString();
         }
 
+        /// <summary>
+        /// Compares 2 lists and returns the object that are the same.
+        /// </summary>
+        /// <param name="playlist"></param>
+        /// <param name="playlist1"></param>
+        /// <returns></returns>
         public static List<Opnamen> comparePlaylist(Playlist playlist, Playlist playlist1) {
 
             List<Opnamen> opnamens = new();
@@ -49,8 +65,10 @@ namespace Spotify {
             });
 
             return opnamens;
+        }
 
-            //return playlist.items.Except(playlist1.items).ToList();
+        public static void changePlaylistName() {
+            
         }
     }
 }

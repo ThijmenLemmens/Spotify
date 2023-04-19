@@ -33,9 +33,7 @@ namespace Spotify {
             addSongs();
             GbMainSection.Controls.Add(new HomeView());
 
-            MediaPlayer.lbArtiest = LbArtiest;
-            MediaPlayer.lbSongName = LbSongName;
-
+            // some magic code for removing scroll bars
             FlpPlaylist.HorizontalScroll.Maximum = 0;
             FlpPlaylist.AutoScroll = false;
             FlpPlaylist.VerticalScroll.Visible = false;
@@ -63,6 +61,11 @@ namespace Spotify {
             GbMainSection.Controls.Add(new HomeView());
         }
 
+        /// <summary>
+        /// creates a playlist and makes a record for it in the Database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnCreatePlayList_Click(Object sender, EventArgs e) {
 
             MySqlCommand cmd = con.CreateCommand();
@@ -105,6 +108,9 @@ namespace Spotify {
 
         }
 
+        /// <summary>
+        /// add songs to the playlists 
+        /// </summary>
         private void addSongs() {
             playlists.ForEach(playlist => {
                 if (playlist.rawJson != null)
@@ -112,6 +118,9 @@ namespace Spotify {
             });
         }
 
+        /// <summary>
+        /// adds the playlist labels to the flowlayloutpanel voor de playlist viewer
+        /// </summary>
         private void updatePlaylist() {
             FlpPlaylist.Controls.Clear();
             playlists.ForEach(playlist => {
