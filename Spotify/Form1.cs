@@ -1,4 +1,6 @@
 using MySql.Data.MySqlClient;
+using NAudio.Utils;
+using NAudio.Wave;
 using Newtonsoft.Json;
 using Spotify.customControlls;
 using Spotify.Properties;
@@ -6,6 +8,7 @@ using Spotify.sql;
 using Spotify.util.afspeellijsten;
 using Spotify.util.opnamens;
 using System.Data.SqlTypes;
+using System.IO;
 using System.Security.Policy;
 using System.Windows.Forms;
 
@@ -138,6 +141,27 @@ namespace Spotify {
         public void setLabels(string name, string artiest) {
             LbSongName.Text = name;
             LbArtiest.Text = artiest;
+        }
+
+        private void TbVolumeSlider_Scroll(Object sender, EventArgs e) {
+            LbVolume.Text = TbVolumeSlider.Value.ToString();
+            if (MediaPlayer.waveOut != null)
+                MediaPlayer.waveOut.Volume = (float) TbVolumeSlider.Value / 100;
+        }
+
+        private void TbTimeline_Scroll(Object sender, EventArgs e) {
+            using Mp3FileReader mp3Reader = new Mp3FileReader(MediaPlayer.memoryStream);
+
+            int time = (Int32) mp3Reader.TotalTime.TotalSeconds;
+
+            //long time = (MediaPlayer.memoryStream.Length * 8) / (MediaPlayer.waveOut.OutputWaveFormat.SampleRate * MediaPlayer.waveOut.OutputWaveFormat.Channels);
+            TbTimeline.Maximum = (int) time;
+            Console.WriteLine(time);
+            if (MediaPlayer.memoryStream != null) {
+                var lengthInBytes = MediaPlayer.memoryStream.Length;
+                var pos = (lengthInBytes / TbTimeline.Maximum) * TbTimeline.Value;   
+                MediaPlayer.memoryStream.Seek(pos, SeekOrigin.Begin);
+            }
         }
     }
 }

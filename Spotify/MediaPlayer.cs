@@ -12,20 +12,25 @@ namespace Spotify {
 
         private static readonly HttpClient client = new HttpClient();
 
-        private static WaveOut waveOut;
+        public static WaveOut waveOut;
+
+        public static MemoryStream memoryStream;
 
         private static bool playing = false;
+
+        public static int currentTotalSeconds = 0;
 
         public static void play(Opnamen opnamen) {
             if (playing) {
                 waveOut.Stop();
+                waveOut.Dispose();
                 playing = false;
             }
 
             // gets the stream for a http request
             byte[] stream = client.GetByteArrayAsync(opnamen.url).Result;
 
-            MemoryStream memoryStream = new(stream);
+            memoryStream = new(stream);
 
             // makes it possible to play form a stream
             using WaveStream blockAlignedStream =

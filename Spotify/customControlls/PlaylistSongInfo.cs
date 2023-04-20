@@ -24,7 +24,7 @@ namespace Spotify.customControlls {
 
             LbOpnamenName.Text = opnamen.name;
 
-            LbArtiestName.Text = Util.setOwners(playlist);
+            LbArtiestName.Text = Util.setOwners(opnamen);
 
             playlists.ForEach(playlist => {
                 CbAddToPlaylist.Items.Add(playlist.Name);

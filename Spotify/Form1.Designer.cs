@@ -27,6 +27,8 @@ namespace Spotify {
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.GbUnder = new System.Windows.Forms.GroupBox();
+            this.LbVolume = new System.Windows.Forms.Label();
+            this.TbVolumeSlider = new System.Windows.Forms.TrackBar();
             this.CbRepeat = new System.Windows.Forms.CheckBox();
             this.LbArtiest = new System.Windows.Forms.Label();
             this.LbSongName = new System.Windows.Forms.Label();
@@ -39,13 +41,19 @@ namespace Spotify {
             this.BtnSearch = new System.Windows.Forms.Button();
             this.BtnHome = new System.Windows.Forms.Button();
             this.GbMainSection = new System.Windows.Forms.GroupBox();
+            this.TbTimeline = new System.Windows.Forms.TrackBar();
             this.GbUnder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TbVolumeSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnPlayStop)).BeginInit();
             this.GbSidebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TbTimeline)).BeginInit();
             this.SuspendLayout();
             // 
             // GbUnder
             // 
+            this.GbUnder.Controls.Add(this.TbTimeline);
+            this.GbUnder.Controls.Add(this.LbVolume);
+            this.GbUnder.Controls.Add(this.TbVolumeSlider);
             this.GbUnder.Controls.Add(this.CbRepeat);
             this.GbUnder.Controls.Add(this.LbArtiest);
             this.GbUnder.Controls.Add(this.LbSongName);
@@ -56,10 +64,30 @@ namespace Spotify {
             this.GbUnder.TabIndex = 0;
             this.GbUnder.TabStop = false;
             // 
+            // LbVolume
+            // 
+            this.LbVolume.AutoSize = true;
+            this.LbVolume.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LbVolume.Location = new System.Drawing.Point(906, 32);
+            this.LbVolume.Name = "LbVolume";
+            this.LbVolume.Size = new System.Drawing.Size(25, 20);
+            this.LbVolume.TabIndex = 7;
+            this.LbVolume.Text = "50";
+            // 
+            // TbVolumeSlider
+            // 
+            this.TbVolumeSlider.Location = new System.Drawing.Point(796, 24);
+            this.TbVolumeSlider.Maximum = 100;
+            this.TbVolumeSlider.Name = "TbVolumeSlider";
+            this.TbVolumeSlider.Size = new System.Drawing.Size(104, 45);
+            this.TbVolumeSlider.TabIndex = 6;
+            this.TbVolumeSlider.Value = 50;
+            this.TbVolumeSlider.Scroll += new System.EventHandler(this.TbVolumeSlider_Scroll);
+            // 
             // CbRepeat
             // 
             this.CbRepeat.AutoSize = true;
-            this.CbRepeat.Location = new System.Drawing.Point(886, 28);
+            this.CbRepeat.Location = new System.Drawing.Point(877, 75);
             this.CbRepeat.Name = "CbRepeat";
             this.CbRepeat.Size = new System.Drawing.Size(62, 19);
             this.CbRepeat.TabIndex = 5;
@@ -178,6 +206,14 @@ namespace Spotify {
             this.GbMainSection.TabIndex = 2;
             this.GbMainSection.TabStop = false;
             // 
+            // TbTimeline
+            // 
+            this.TbTimeline.Location = new System.Drawing.Point(326, 62);
+            this.TbTimeline.Name = "TbTimeline";
+            this.TbTimeline.Size = new System.Drawing.Size(312, 45);
+            this.TbTimeline.TabIndex = 8;
+            this.TbTimeline.Scroll += new System.EventHandler(this.TbTimeline_Scroll);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -195,9 +231,11 @@ namespace Spotify {
             this.Load += new System.EventHandler(this.Form1_Load);
             this.GbUnder.ResumeLayout(false);
             this.GbUnder.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TbVolumeSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnPlayStop)).EndInit();
             this.GbSidebar.ResumeLayout(false);
             this.GbSidebar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TbTimeline)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -217,5 +255,8 @@ namespace Spotify {
         private Label LbPlaylist;
         private Button BtnFriends;
         private CheckBox CbRepeat;
+        private TrackBar TbVolumeSlider;
+        private Label LbVolume;
+        private TrackBar TbTimeline;
     }
 }

@@ -61,6 +61,7 @@
             this.BtnRemove.TabIndex = 2;
             this.BtnRemove.Text = "Remove";
             this.BtnRemove.UseVisualStyleBackColor = true;
+            this.BtnRemove.Click += new System.EventHandler(this.BtnRemove_Click);
             // 
             // CbAddToPlaylist
             // 
